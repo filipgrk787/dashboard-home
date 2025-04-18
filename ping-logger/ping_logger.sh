@@ -4,8 +4,8 @@
 TARGET="www.google.com"
 EMAIL_TO="filipgrk@gmail.com"
 
-LOG_FILE="$HOME/ping_loss.log"
-SUMMARY_FILE="$HOME/ping_summary.log"
+LOG_FILE="$HOME/filipgrk-project/ping_loss.log"
+SUMMARY_FILE="$HOME/filipgrk-project/ping_summary.log"
 
 declare -a response_times
 
@@ -17,7 +17,7 @@ total_response_time=0
 start_time=$(date +%s)
 last_email_sent=$start_time
 
-CSV_LOG="$HOME/ping_data.csv"
+CSV_LOG="$HOME/filipgrk-project/web-dashboard/ping_data.db"
 
 # Write CSV header once if file doesn't exist
 if [ ! -f "$CSV_LOG" ]; then
@@ -25,14 +25,6 @@ if [ ! -f "$CSV_LOG" ]; then
 fi
 
 # === Functions ===
-
-timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-
-    if echo "$output" | grep -q "time="; then
-    	echo "$timestamp,1,$ms" >> "$CSV_LOG"
-    else
-    	echo "$timestamp,0," >> "$CSV_LOG"
-    fi
 
 calculate_median() {
     sorted=($(printf "%s\n" "${response_times[@]}" | sort -n))

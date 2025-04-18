@@ -71,7 +71,7 @@ def logout():
 
 @app.route('/data')
 def data():
-    conn = sqlite3.connect('/home/filipgrk/ping_data.db')
+    conn = sqlite3.connect('/home/filipgrk/filipgrk-project/web-dashboard/ping_data.db')
     cursor = conn.cursor()
     cursor.execute("SELECT timestamp, success, latency FROM pings ORDER BY timestamp ASC")
     rows = cursor.fetchall()
