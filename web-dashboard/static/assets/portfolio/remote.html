@@ -2,88 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Remote Control</title>
+  <title>Remote Control Center</title>
   <link rel="stylesheet" href="/static/assets/css/remote.css">
-  <script>
-    function openFullscreen(button) {
-      const iframe = button.closest('.remote-frame').querySelector('iframe');
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen();
-      }
-    }
-    </script>
 </head>
 <body>
+
   <!-- Navigation Bar -->
-  <div class="contact-nav">
-    <div class="contact-nav-inner">
-      <div class="logo">
-        <img src="/static/assets/img/filipgrk-logo-white.png" alt="FilipGrk Logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="/static/assets/portfolio/index.html">Home</a></li>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/static/assets/portfolio/contact.html">Contact</a></li>
-        <li><a href="/static/assets/portfolio/remote.html" class="active">Remote</a></li>
-      </ul>
+  <div class="navbar">
+    <div class="logo">
+      <img src="/static/assets/img/filipgrk-logo.png" alt="FilipGrk Logo">
     </div>
+    <ul class="nav-links">
+      <li><a href="/static/assets/portfolio/index.html">Home</a></li>
+      <li><a href="/static/assets/portfolio/index.html#services">Services</a></li>
+      <li><a href="/static/assets/portfolio/index.html#portfolio">Portfolio</a></li>
+      <li><a href="/static/assets/portfolio/contact.html">Contact</a></li>
+      <li><a href="#" class="active">Remote</a></li>
+    </ul>
   </div>
 
   <!-- Page Title -->
-  <h2 class="section-title">Remote Control Center</h2>
+  <section class="hero">
+    <h1>Remote Control Center</h1>
+    <p>Access your home infrastructure</p>
+  </section>
 
   <!-- Remote Machines -->
-  <div class="remote-control-container">
-    <div class="control-card">
+  <section class="grid">
+    <div class="card">
       <h3>PG-DSK02</h3>
-      <p>192.168.1.16</p>
-      <div class="remote-frame">
-        <iframe src="https://dashboard.filipgrk.host/guac/#/client/MQBjAG15c3Fs" frameborder="0"></iframe>
-        <button onclick="openFullscreen(this)">Full Screen</button>
-      </div>      
       <div class="control-buttons">
-        <a href="rdp://192.168.1.16">RDP</a>
-        <a href="ssh://192.168.1.16">SSH</a>
+       <a href="https://dashboard.filipgrk.host/guac/#/client/MQBjAG15c3Fs" target="_blank" class="btn">Connect (Guacamole)</a>
       </div>
     </div>
 
-    <div class="control-card">
-        <h3>Pi-Ubuntu</h3>
-        <p>192.168.1.226</p>
-        <div class="remote-frame">
-          <iframe src="https://dashboard.filipgrk.host/terminal/" frameborder="0"></iframe>
-          <button onclick="openFullscreen(this)">Full Screen</button>
-        </div>      
-        <div class="control-buttons">
-          <a href="http://192.168.1.226:7681" target="_blank">Open in Tab</a>
-        </div>
+    <div class="card">
+      <h3>Pi-Ubuntu</h3>
+      <div class="control-buttons">
+        <a href="https://dashboard.filipgrk.host/terminal/" target="_blank" class="btn">Open Terminal</a>
+      </div>
     </div>
-      
-<!-- Extra Panels 
-    <div class="control-card">
+
+    <div class="card">
       <h3>Proxmox Node</h3>
-      <p>192.168.1.10</p>
       <div class="control-buttons">
-        <a href="https://192.168.1.10:8006">Console</a>
+        <a href="https://192.168.1.10:8006" target="_blank" class="btn">Console</a>
       </div>
     </div>
 
-    <div class="control-card">
+    <div class="card">
       <h3>NAS Server</h3>
-      <p>192.168.1.50</p>
       <div class="control-buttons">
-        <a href="https://192.168.1.50">Web UI</a>
+        <a href="https://192.168.1.50" target="_blank" class="btn">Web UI</a>
       </div>
     </div>
-  </div>
--->
+  </section>
+
   <footer>
-    &copy; 2025 FilipGrk. All rights reserved.
+    <p>&copy; 2025 FilipGrk. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
