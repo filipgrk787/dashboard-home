@@ -103,5 +103,23 @@ def data():
         "data": ping_data
     })
 
+@app.route('/site')
+def site_index():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    return redirect('/static/assets/portfolio/index.html')
+
+@app.route('/site/contact')
+def site_contact():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    return redirect('/static/assets/portfolio/contact.html')
+
+@app.route('/site/remote')
+def site_remote():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    return redirect('/static/assets/portfolio/remote.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

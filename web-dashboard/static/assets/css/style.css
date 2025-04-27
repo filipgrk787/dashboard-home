@@ -16,12 +16,13 @@ body {
 
 .navbar .logo img {
     height: 40px;
+    width: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 3.5rem;
     margin: 0;
 }
 
@@ -69,14 +70,62 @@ body {
 }
 
 .card {
-    background: #fff;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     max-width: 300px;
 }
 
-footer {
+.card img{
+    width: 100%;
+    display: block;
+}
+
+.portfolio-items {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-card img {
+  width: 100%;
+  display: block;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+.footer {
     text-align: center;
     padding: 2rem;
     background-color: #f1f1f1;
